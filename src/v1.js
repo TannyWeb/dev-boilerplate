@@ -1,3 +1,5 @@
+import './v1.scss';
+
 vwo_$(function() {
 
     if (!document.querySelector('.test01_loaded')) {
