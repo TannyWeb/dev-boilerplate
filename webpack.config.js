@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -39,6 +40,7 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+		new CleanWebpackPlugin(["./dist"]) // Deletes the contents of dist on each build
   ]
 };
