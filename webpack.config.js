@@ -41,6 +41,6 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-		new CleanWebpackPlugin(["./dist"]) // Deletes the contents of dist on each build
+		new CleanWebpackPlugin() // Deletes the contents of the output on each build
   ]
 };
