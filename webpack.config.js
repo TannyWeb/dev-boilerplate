@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -15,26 +16,20 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+				include: [
+					path.resolve(__dirname, "./src") // Only babelify our code
+				],
         use: {
-          loader: "babel-loader",
-          options: { presets: ["es2015"] }
+          loader: "babel-loader"
         }
       },
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          },
-          {
-            loader: "postcss-loader"
-          }
+          MiniCssExtractPlugin.loader, // Extracts CSS into seperate file
+          "css-loader", // translates CSS into CommonJS
+          "sass-loader", // compiles Sass to CSS
+          "postcss-loader" // Magic
         ]
       }
     ]
@@ -45,6 +40,7 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+		new CleanWebpackPlugin() // Deletes the contents of the output on each build
   ]
 };
