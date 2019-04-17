@@ -1,4 +1,4 @@
-import sendGAEvent from 'icarus'
+import * as icarus from 'icarus'
 import './v1.scss';
 
 vwo_$(function() {
@@ -13,7 +13,7 @@ function t01Changes() {
     vwo_$('body').addClass('test01_loaded')
 
     hotJarTrigger('Test01', 'Variation_1');
-    sendGAEvent({
+    icarus.ga.sendEvent({
         trackingId: '',
         dimensionNumber: '',
         campaignName: 'Test01 - Variation 1',
