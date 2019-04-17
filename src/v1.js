@@ -12,7 +12,8 @@ vwo_$(function() {
 function t01Changes() {
     vwo_$('body').addClass('test01_loaded')
 
-    hotJarTrigger('Test01', 'Variation_1');
+    icarus.hotjar.trigger('Test01');
+    icarus.hotjar.tag(['Test01', 'Variation 1']);
     icarus.ga.sendEvent({
         trackingId: '',
         dimensionNumber: '',
@@ -22,15 +23,6 @@ function t01Changes() {
         action: 'Test loaded',
         label: 'Test01 - Variation 1'
     });
-}
-
-
-function hotJarTrigger(campaignName, campaignVariation) {
-    window.hj = window.hj || function() {
-        (hj.q = hj.q || []).push(arguments);
-    };
-    window.hj('trigger', campaignVariation);
-    window.hj('tagRecording', [campaignName, campaignVariation]);
 }
 
 });

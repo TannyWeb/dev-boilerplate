@@ -9,9 +9,10 @@ vwo_$(function() {
     }
 
 function t01Changes() {
-    vwo_$('body').addClass('test01_loaded')
+    vwo_$('body').addClass('test01_loaded');
 
-    hotJarTrigger('Test01', 'Control');
+    icarus.hotjar.trigger('Test01');
+    icarus.hotjar.tag(['Test01', 'Control']);
     icarus.ga.sendEvent({
         trackingId: '',
         dimensionNumber: '',
@@ -21,15 +22,6 @@ function t01Changes() {
         action: 'Test loaded',
         label: 'Test01 - Control'
     });
-}
-
-
-function hotJarTrigger(campaignName, campaignVariation) {
-    window.hj = window.hj || function() {
-        (hj.q = hj.q || []).push(arguments);
-    };
-    window.hj('trigger', campaignVariation);
-    window.hj('tagRecording', [campaignName, campaignVariation]);
 }
 
 });
