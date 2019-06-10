@@ -1,27 +1,17 @@
-import * as icarus from 'icarus'
+import DDLtrackCampaign from './common.js'
 
-vwo_$(function() {
 
-    if (!document.querySelector('.test01_loaded')) {
-        t01Changes();
-    }else {
-        return;
-    }
+const testVar = 'Control';
 
-function t01Changes() {
-    vwo_$('body').addClass('test01_loaded');
-
-    icarus.hotjar.trigger('Test01');
-    icarus.hotjar.tag(['Test01', 'Control']);
-    icarus.ga.sendEvent({
-        trackingId: '',
-        dimensionNumber: '',
-        campaignName: 'Test01 - Control',
-        notInteractive: true,
-        category: 'iPro CRO',
-        action: 'Test loaded',
-        label: 'Test01 - Control'
-    });
+if (document.body.className.indexOf('test01_loaded') === -1) {
+    DDLtrackCampaign(testVar); // general campaign tracking
+    t01Changes();
+}else {
+    console.warn('Experiment not loaded');
 }
 
-});
+function t01Changes() {
+    document.body.classList.add('test01_loaded');
+
+    DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
+}
