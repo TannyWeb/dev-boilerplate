@@ -22,13 +22,13 @@ After that you can edit the code as you please.
 ### Compile
 
 For your JS & SASS/CSS to compile in real time you can run the following:
- ```console
- $ npm run dev
- ``` 
+```console
+$ npm run dev
+``` 
  
 To get the production code, run this instead:
-  ```console
- $ npm run prod
- ``` 
+```console
+$ npm run prod
+``` 
 
- These should both output to a `dist` folder and you can copy your code from there to paste into VWO/Optimize etc.
+These should both output to a `dist` folder and you can copy your code from there to paste into VWO/Optimize etc.
