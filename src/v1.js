@@ -6,7 +6,7 @@ const testVar = 'Variation 1';
 if (document.body.className.indexOf('test01_loaded') === -1) {
     DDLtrackCampaign(testVar); // general campaign tracking
     t01Changes();
-}else {
+} else {
     console.warn('Experiment not loaded');
 }
 
