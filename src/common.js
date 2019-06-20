@@ -1,4 +1,5 @@
-import * as icarus from 'icarus'
+import { ga } from 'icarus'
+import { hotjar } from 'icarus'
 
 
 // Editable test settings
@@ -13,9 +14,9 @@ function DDLtrackCampaign(testVar, eventAction) {
     let strippedTestName = testName.replace(/[^0-9a-zA-Z]+/g, '_'), // strip out special characters for HJ trigger
         strippedTestVar = testVar.replace(/[^0-9a-zA-Z]+/g, '_'); // strip out special characters for HJ trigger
 
-    icarus.hotjar.trigger(`${strippedTestName}_${strippedTestVar}`);
-    icarus.hotjar.tag([testName, testVar]);
-    icarus.ga.sendEvent({
+    hotjar.trigger(`${strippedTestName}_${strippedTestVar}`);
+    hotjar.tag([testName, testVar]);
+    ga.sendEvent({
         trackingId: trackingId, 
         dimensionNumber: dimensionIndex, 
         campaignName: `${testName} - ${testVar}`,
