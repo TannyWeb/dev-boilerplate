@@ -1,13 +1,17 @@
 import DDLtrackCampaign from './common.js'
-
+import { pollFor } from 'icarus'
 
 const testVar = 'Control';
 
-if (document.body.className.indexOf('test01_loaded') === -1) {
-    DDLtrackCampaign(testVar); // general campaign tracking
-    t01Changes();
-} else {
-    console.warn('Experiment not loaded');
+pollFor('body', initT01)
+
+function initT01() {
+    if (document.body.className.indexOf('test01_loaded') === -1) {
+        DDLtrackCampaign(testVar); // general campaign tracking
+        t01Changes();
+    } else {
+        console.warn('Experiment not loaded');
+    }
 }
 
 function t01Changes() {
