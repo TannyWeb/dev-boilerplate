@@ -1,7 +1,8 @@
-import DDLtrackCampaign from './common.js'
+import DDLtrackCampaign from '../../common/common.js'
 import { pollFor } from 'icarus'
+import './v2.scss'
 
-const testVar = 'Control';
+const testVar = 'Variation 2';
 
 pollFor('body', initT01)
 
@@ -13,9 +14,13 @@ function initT01() {
         console.warn('Experiment not loaded');
     }
 }
+    
 
 function t01Changes() {
     document.body.classList.add('test01_loaded');
-
+    
     DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
+
+    // your test changes go here
+
 }
