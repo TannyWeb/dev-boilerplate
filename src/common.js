@@ -15,7 +15,7 @@ function DDLtrackCampaign(testVar, eventAction) {
         strippedTestVar = testVar.replace(/[^0-9a-zA-Z]+/g, '_'); // strip out special characters for HJ trigger
 
     hotjar.trigger(`${strippedTestName}_${strippedTestVar}`);
-    hotjar.tag([testName, testVar]);
+    hotjar.tag([testName, `${testName} - ${testVar}`]);
     ga.sendEvent({
         trackingId: trackingId, 
         dimensionNumber: dimensionIndex, 
