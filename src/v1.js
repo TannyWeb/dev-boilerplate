@@ -4,21 +4,21 @@ import './v1.scss'
 
 const testVar = 'Variation 1';
 
-pollFor('body', initT01)
+pollFor('body', initJDW16)
 
-function initT01() {
-    if (document.body.className.indexOf('test01_loaded') === -1) {
+function initJDW16() {
+    if (document.body.className.indexOf('jdw16_loaded') === -1) {
         DDLtrackCampaign(testVar); // general campaign tracking
-        t01Changes();
+        JDW16Changes();
     } else {
         console.warn('Experiment not loaded');
     }
 }
-    
 
-function t01Changes() {
-    document.body.classList.add('test01_loaded');
-    
+
+function JDW16Changes() {
+    document.body.classList.add('jdw16_loaded');
+
     DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
 
     // your test changes go here
