@@ -28,8 +28,8 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader, // Extracts CSS into seperate file
           "css-loader", // translates CSS into CommonJS
-          "sass-loader", // compiles Sass to CSS
-          "postcss-loader" // Magic
+          "postcss-loader", // Magic
+          "sass-loader" // compiles Sass to CSS
         ]
       }
     ]
