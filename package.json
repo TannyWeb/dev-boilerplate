@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development --watch",
-    "prod": "webpack --mode production"
+    "dev": "webpack --mode development --env development --watch",
+    "devCSS": "webpack --mode development --env developmentCSS --watch",
+    "prod": "webpack --mode production --env production"
   },
   "author": "Kat Metax",
   "license": "UNLICENSED",
