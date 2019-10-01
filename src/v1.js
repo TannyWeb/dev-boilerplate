@@ -1,23 +1,23 @@
-import DDLtrackCampaign from '../common/functions/ddl_track';
+import DDLtrackCampaign from './common.js'
 import { pollFor } from 'icarus'
-import './styles/v1.scss'
+import './v1.scss'
 
 const testVar = 'Variation 1';
 
-pollFor('body', initMS73)
+pollFor('body', initT01)
 
-function initMS73() {
-    if (document.body.className.indexOf('MS73_loaded') === -1) {
+function initT01() {
+    if (document.body.className.indexOf('test01_loaded') === -1) {
         DDLtrackCampaign(testVar); // general campaign tracking
-        MS73Changes();
+        t01Changes();
     } else {
         console.warn('Experiment not loaded');
     }
 }
     
 
-function MS73Changes() {
-    document.body.classList.add('MS73_loaded');
+function t01Changes() {
+    document.body.classList.add('test01_loaded');
     
     DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
 
