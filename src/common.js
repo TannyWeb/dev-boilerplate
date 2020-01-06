@@ -10,7 +10,7 @@ const testName = 'Test 01', // Add test name
 
 
 // Manual GA and Hotjar tracking
-function DDLtrackCampaign(testVar, eventAction) {
+function DDLtrackCampaign(testVar, eventAction, eventLabel, eventValue) {
     let strippedTestName = testName.replace(/[^0-9a-zA-Z]+/g, '_'), // strip out special characters for HJ trigger
         strippedTestVar = testVar.replace(/[^0-9a-zA-Z]+/g, '_'); // strip out special characters for HJ trigger
 
@@ -23,7 +23,8 @@ function DDLtrackCampaign(testVar, eventAction) {
         notInteractive: true,
         category: 'DDL CRO',
         action: (eventAction === undefined) ? 'Test loaded' : eventAction,
-        label: `${testName} - ${testVar}`
+        label: (eventLabel === undefined) ? `${testName} - ${testVar}` : eventValue,
+        value: (eventAction === undefined) ? 0 : eventValue
     });
 };
 
