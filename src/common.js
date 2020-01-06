@@ -23,8 +23,8 @@ function DDLtrackCampaign(testVar, eventAction, eventLabel, eventValue) {
         notInteractive: true,
         category: 'DDL CRO',
         action: (eventAction === undefined) ? 'Test loaded' : eventAction,
-        label: (eventLabel === undefined) ? `${testName} - ${testVar}` : eventValue,
-        value: (eventAction === undefined) ? 0 : eventValue
+        label: (eventLabel === undefined) ? `${testName} - ${testVar}` : eventLabel,
+        value: (eventValue === undefined) ? 0 : eventValue
     });
 };
 
