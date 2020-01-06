@@ -25,6 +25,11 @@ For your JS & SASS/CSS to compile in real time you can run the following:
 ```console
 $ npm run dev
 ``` 
+
+For your JS & SASS/CSS to compile as one JS file and in real time you can run the following:
+```console
+$ npm run devCSS
+``` 
  
 To get the production code, run this instead:
 ```console
