@@ -60,6 +60,10 @@
 				top: calc(50% - 200px);
 				width: 709px;
 			}
+
+			@media (max-width: 700px) {
+				top: 75px;
+			}
 		}
 	}
 	.ddl-bold {
