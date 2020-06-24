@@ -18,10 +18,6 @@ function initT01() {
 function t01Changes() {
 	document.body.classList.add('ppl29_loaded');
 
-	// DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
-
-	// your test changes go here
-
 	let text = `<p>How does People's Postcode Lottery work? <span class="ddl-click-ev">Watch this video</span><span class="ddl-bold"> to find out more</span></p>`;
 
 	// $(text).insertAfter('div#cms-block-326 .cms-rich-text p');
@@ -46,27 +42,27 @@ function t01Changes() {
 						return document.querySelector('#react-salesflow-container').length !== 0;
 					},
 					() => {
-						console.log('outside of settimeout');
 						setTimeout(() => {
-							console.log('inside of settimeout');
 							$(text).insertAfter('div#cms-block-326 .cms-rich-text p');
 							$(overlay).appendTo('body');
 							$(button).appendTo('.ddl-overlay');
 							$(add).appendTo('.ddl-overlay');
 
+							// link event listener
 							document.querySelector('span.ddl-click-ev').addEventListener('click', function() {
 								$('.ddl-overlay').addClass('ddl-show');
 								DDLtrackCampaign(testVar, 'video-link-clicked');
 
+								// wait until video loads up
 								pollFor(
 									() => {
 										return document.querySelector('.how-it-works-intro__video-iframe').length !== 0;
 									},
 									() => {
+										// event listener to close video
 										$('.ddl-overlay .close').on('click', function() {
 											$('.ddl-overlay').removeClass('ddl-show');
-											// document.querySelector('video').pause();
-											// document.querySelector('.html5-video-container video').pause();
+
 											let iframe = document.querySelector('.how-it-works-intro__video-iframe');
 											var iframeSrc = iframe.src;
 											iframe.src = iframeSrc;
