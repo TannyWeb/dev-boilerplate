@@ -17,7 +17,7 @@
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
-    "icarus": "git+ssh://git@bitbucket.org:iprospectcromanchester/icarus.git#v0.5.0",
+    "icarus": "git+ssh://git@bitbucket.org:iprospectcromanchester/icarus.git#v0.6.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.8.3",
     "postcss-loader": "^3.0.0",
