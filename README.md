@@ -37,3 +37,21 @@ $ npm run prod
 ``` 
 
 These should both output to a `dist` folder and you can copy your code from there to paste into VWO/Optimize etc.
+
+- - -
+
+### Tracking
+Campaign Tracking
+```javascript
+DDLtrackCampaign(testVar); // general campaign tracking
+``` 
+
+Event Tracking
+```javascript
+DDLtrackEvent(testVar, 'Test CTA clicked', 'with Label', 2); // event tracking (testVar, 'action', 'label', 'value')
+``` 
+
+Hotjar Tracking
+```javascript
+HotjarTracking(testVar, 'Custom Varible'); // hotjar (testVar, 'Custom Varible')
+``` 

@@ -1,4 +1,4 @@
-import DDLtrackCampaign from './common.js'
+import { DDLtrackCampaign, DDLtrackEvent, HotjarTracking} from '../Common/ddl_tracking.js'
 import { pollFor } from 'icarus'
 import './v1.scss'
 
@@ -14,13 +14,15 @@ function initT01() {
         console.warn('Experiment not loaded');
     }
 }
-    
+
 
 function t01Changes() {
     document.body.classList.add('test01_loaded');
-    
-    DDLtrackCampaign(testVar, 'CTA clicked'); // event tracking
 
     // your test changes go here
+
+    // Tracking Helpers
+    // DDLtrackEvent(testVar, 'Test CTA clicked', 'with Label', 2); // event tracking (testVar, 'action', 'label', 'value')
+    // HotjarTracking(testVar, 'Custom Varible'); // hotjar (testVar, 'Custom Variable')
 
 }

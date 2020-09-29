@@ -5,8 +5,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = (env, argv) => {
   return {
     entry: {
-      v1: "./src/v1.js",
-      original: "./src/original.js"
+      v1: "./src/V1/v1.js",
+      control: "./src/Control/control.js"
     },
     output: {
       path: path.resolve(__dirname, "dist"),
