@@ -55,3 +55,17 @@ Hotjar Tracking
 ```javascript
 HotjarTracking(testVar, 'Custom Varible'); // hotjar (testVar, 'Custom Varible')
 ``` 
+
+- - - 
+
+### Revert Commits
+
+Follow these steps if test commits have been pushed to the boilerplate repo by accident.
+
+```shell
+git reset --hard <latest-intended-commit-hash>
+```
+
+```shell
+git push -f origin main
+```
